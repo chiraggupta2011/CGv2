@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2025 at 05:22 PM
+-- Generation Time: Jun 18, 2025 at 05:39 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -45,7 +45,9 @@ INSERT INTO `admin_logs` (`id`, `admin_id`, `action`, `timestamp`) VALUES
 (35, 1, 'Admin logged in', '2025-06-18 19:21:43'),
 (36, 1, 'Updated product: Classic Loafers', '2025-06-18 19:22:32'),
 (37, 1, 'Updated product: Running Sports Shoes', '2025-06-18 19:23:36'),
-(38, 1, 'Admin logged out', '2025-06-18 19:25:47');
+(38, 1, 'Admin logged out', '2025-06-18 19:25:47'),
+(39, 1, 'Admin logged in', '2025-06-18 21:07:22'),
+(40, 1, 'Admin logged out', '2025-06-18 21:08:20');
 
 -- --------------------------------------------------------
 
@@ -99,7 +101,8 @@ INSERT INTO `orders` (`id`, `user_id`, `total_amount`, `status`, `created_at`) V
 (8, 1, 1200.00, 'pending', '2025-06-18 18:14:32'),
 (9, 1, 1200.00, 'pending', '2025-06-18 18:14:35'),
 (10, 1, 1200.00, 'delivered', '2025-06-18 18:15:09'),
-(11, 1, 999.00, 'delivered', '2025-06-18 18:44:58');
+(11, 1, 999.00, 'delivered', '2025-06-18 18:44:58'),
+(12, 2, 4995.00, 'pending', '2025-06-18 21:07:02');
 
 -- --------------------------------------------------------
 
@@ -126,7 +129,8 @@ INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `quantity`, `price`, 
 (3, 2, 6, 1, 79.99, NULL),
 (4, 3, 2, 5, 129.99, NULL),
 (6, 10, 2, 1, 1200.00, ''),
-(7, 11, 1, 1, 999.00, '');
+(7, 11, 1, 1, 999.00, ''),
+(8, 12, 1, 5, 999.00, '10');
 
 -- --------------------------------------------------------
 
@@ -184,8 +188,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `address`, `is_admin`, `created_at`) VALUES
-(1, 'Admin User', 'admin@cgshoes.com', '$2y$10$k0tdGRCwvFyQUNBsOD1oQ.SWJxLJMFClGLRizUyLyo27zx0sAQQ6.', '+1234567890', '123 Admin Street, City, State', 1, '2025-06-18 15:20:15'),
-(2, 'John Customer', 'customer@cgshoes.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '+1234567891', '456 Customer Avenue, City, State', 0, '2025-06-18 15:20:15');
+(1, 'Admin User', 'admin@cgshoes.com', '$2y$10$N77cJBsVlKLqUZwykSGoi.zNqAYVW6W5T9qDCB2dOMIqngGqhGVym', '+1234567890', '123 Admin Street, City, State', 1, '2025-06-18 15:20:15'),
+(2, 'John Customer', 'customer@cgshoes.com', '$2y$10$sTGdqw.MsrCBtguiwB0vO.xz/FHxzXYK6huaetdzBVNFStlUQKaq6', '+1234567891', '456 Customer Avenue, City, State', 0, '2025-06-18 15:20:15');
 
 --
 -- Indexes for dumped tables
@@ -241,7 +245,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `admin_logs`
 --
 ALTER TABLE `admin_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -253,13 +257,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `products`
